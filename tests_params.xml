@@ -1,0 +1,18 @@
+<tests>
+
+	<test>
+		<name>testConvertTo</name>
+		<price>123</price>
+	</test>
+	
+	<test>
+		<name>testCorrectNumFrom</name>
+		<price>abc</price>
+	</test>
+	
+	<test>
+		<name>testCorrectNumTo</name>
+		<price>abc</price>
+	</test>
+
+</tests>

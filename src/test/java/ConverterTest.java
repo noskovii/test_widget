@@ -38,7 +38,7 @@ public class ConverterTest
     {
         WebElement from = driver.findElement(By.xpath(".//*[@id='from']"));
         from.clear();
-        from.sendKeys("123");
+        from.sendKeys(ParametersParser.getInstance().getTestConvertToParam());
 
         assertThat(driver.findElement(By.xpath(".//*[@id='to']")).getAttribute("value"), is(not("")));
     }
@@ -48,7 +48,7 @@ public class ConverterTest
     {
         WebElement from = driver.findElement(By.xpath(".//*[@id='from']"));
         from.clear();
-        from.sendKeys("abc");
+        from.sendKeys(ParametersParser.getInstance().getTestCorrectNumFromParam());
 
         assertThat(driver.findElement(By.xpath(".//*[@id='from']")).getText(), is(""));
     }
@@ -58,7 +58,7 @@ public class ConverterTest
     {
         WebElement from = driver.findElement(By.xpath(".//*[@id='to']"));
         from.clear();
-        from.sendKeys("abc");
+        from.sendKeys(ParametersParser.getInstance().getTestCorrectNumToParam());
 
         assertThat(driver.findElement(By.xpath(".//*[@id='to']")).getText(), is(""));
     }
