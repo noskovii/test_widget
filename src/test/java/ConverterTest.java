@@ -32,11 +32,15 @@ public class ConverterTest
     public void testConvertTo()
     {
         WebElement from = driver.findElement(By.xpath(".//*[@id='from']"));
-        from.clear();
-        from.sendKeys(ParametersParser.getInstance().getTestConvertToParam());
 
-        saveAllureScreenshot();
-        assertThat(driver.findElement(By.xpath(".//*[@id='to']")).getAttribute("value"), is(not("")));
+        for (String param : ParametersParser.getInstance().getTestConvertToParam())
+        {
+            from.clear();
+            from.sendKeys(param);
+
+            saveAllureScreenshot();
+            assertThat(driver.findElement(By.xpath(".//*[@id='to']")).getAttribute("value"), is(not("")));
+        }
     }
 
     @Test
@@ -44,23 +48,31 @@ public class ConverterTest
     public void testCorrectNumFrom()
     {
         WebElement from = driver.findElement(By.xpath(".//*[@id='from']"));
-        from.clear();
-        from.sendKeys(ParametersParser.getInstance().getTestCorrectNumFromParam());
 
-        saveAllureScreenshot();
-        assertThat(driver.findElement(By.xpath(".//*[@id='from']")).getText(), is(""));
+        for (String param : ParametersParser.getInstance().getTestCorrectNumFromParam())
+        {
+            from.clear();
+            from.sendKeys(param);
+
+            saveAllureScreenshot();
+            assertThat(driver.findElement(By.xpath(".//*[@id='from']")).getText(), is(""));
+        }
     }
 
     @Test
     @Title("Test case of correct input in to-field")
     public void testCorrectNumTo()
     {
-        WebElement from = driver.findElement(By.xpath(".//*[@id='to']"));
-        from.clear();
-        from.sendKeys(ParametersParser.getInstance().getTestCorrectNumToParam());
+        WebElement to = driver.findElement(By.xpath(".//*[@id='to']"));
 
-        saveAllureScreenshot();
-        assertThat(driver.findElement(By.xpath(".//*[@id='to']")).getText(), is(""));
+        for (String param : ParametersParser.getInstance().getTestCorrectNumToParam())
+        {
+            to.clear();
+            to.sendKeys(param);
+
+            saveAllureScreenshot();
+            assertThat(driver.findElement(By.xpath(".//*[@id='to']")).getText(), is(""));
+        }
     }
 
     @AfterClass

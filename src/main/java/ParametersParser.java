@@ -7,14 +7,16 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ParametersParser
 {
     private static ParametersParser instance;
 
-    private String testConvertToParam;
-    private String testCorrectNumFromParam;
-    private String testCorrectNumToParam;
+    List<String> testConvertToParamList = new ArrayList();
+    List<String> testCorrectNumFromParamList = new ArrayList();
+    List<String> testCorrectNumToParamList = new ArrayList();
 
     private ParametersParser()
     {
@@ -48,15 +50,15 @@ public class ParametersParser
                             {
                                 if (str.equals("testConvertTo"))
                                 {
-                                    testConvertToParam = itemProp.getChildNodes().item(0).getTextContent();
+                                    testConvertToParamList.add(itemProp.getChildNodes().item(0).getTextContent());
                                 }
                                 else if (str.equals("testCorrectNumFrom"))
                                 {
-                                    testCorrectNumFromParam = itemProp.getChildNodes().item(0).getTextContent();
+                                    testCorrectNumFromParamList.add(itemProp.getChildNodes().item(0).getTextContent());
                                 }
                                 else
                                 {
-                                    testCorrectNumToParam = itemProp.getChildNodes().item(0).getTextContent();
+                                    testCorrectNumToParamList.add(itemProp.getChildNodes().item(0).getTextContent());
                                 }
                             }
                         }
@@ -72,19 +74,19 @@ public class ParametersParser
         }
     }
 
-    public String getTestConvertToParam()
+    public List<String> getTestConvertToParam()
     {
-        return testConvertToParam;
+        return testConvertToParamList;
     }
 
-    public String getTestCorrectNumFromParam()
+    public List<String> getTestCorrectNumFromParam()
     {
-        return testCorrectNumFromParam;
+        return testCorrectNumFromParamList;
     }
 
-    public String getTestCorrectNumToParam()
+    public List<String> getTestCorrectNumToParam()
     {
-        return testCorrectNumToParam;
+        return testCorrectNumToParamList;
     }
 
     public static ParametersParser getInstance()
