@@ -4,23 +4,10 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameter;
-import org.junit.runners.Parameterized.Parameters;
-
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import ru.yandex.qatools.allure.annotations.Attachment;
-import ru.yandex.qatools.allure.annotations.Step;
 import ru.yandex.qatools.allure.annotations.Title;
-
-import java.util.Arrays;
-import java.util.concurrent.TimeUnit;
 
 public class ConverterTest
 {
@@ -41,7 +28,7 @@ public class ConverterTest
     }
 
     @Test
-    @Title("Test case of convert to field")
+    @Title("Test case of convert money")
     public void testConvertTo()
     {
         WebElement from = driver.findElement(By.xpath(".//*[@id='from']"));
@@ -53,7 +40,7 @@ public class ConverterTest
     }
 
     @Test
-    @Title("Test case of correct input in from field")
+    @Title("Test case of correct input in from-field")
     public void testCorrectNumFrom()
     {
         WebElement from = driver.findElement(By.xpath(".//*[@id='from']"));
@@ -65,7 +52,7 @@ public class ConverterTest
     }
 
     @Test
-    @Title("Test case of correct input in to field")
+    @Title("Test case of correct input in to-field")
     public void testCorrectNumTo()
     {
         WebElement from = driver.findElement(By.xpath(".//*[@id='to']"));

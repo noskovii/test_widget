@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class ParametersParser
 {
-    private static ParametersParser instance;// = null;
+    private static ParametersParser instance;
 
     private String testConvertToParam;
     private String testCorrectNumFromParam;
@@ -40,7 +40,7 @@ public class ParametersParser
 
                         if (itemProp.getNodeType() != Node.TEXT_NODE)
                         {
-                            if (itemProp.getNodeName() == "name")
+                            if (itemProp.getNodeName().equals("name"))
                             {
                                 str = itemProp.getChildNodes().item(0).getTextContent();
                             }
