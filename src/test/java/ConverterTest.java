@@ -55,7 +55,7 @@ public class ConverterTest
             from.sendKeys(param);
 
             saveAllureScreenshot();
-            assertThat(driver.findElement(By.xpath(".//*[@id='from']")).getText(), is(""));
+            assertThat(driver.findElement(By.xpath(".//*[@id='from']")).getAttribute("value"), is(""));
         }
     }
 
@@ -71,7 +71,7 @@ public class ConverterTest
             to.sendKeys(param);
 
             saveAllureScreenshot();
-            assertThat(driver.findElement(By.xpath(".//*[@id='to']")).getText(), is(""));
+            assertThat(driver.findElement(By.xpath(".//*[@id='to']")).getAttribute("value"), is(""));
         }
     }
 
