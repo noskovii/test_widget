@@ -5,14 +5,14 @@
 		<price>123</price>
 		<price>0</price>
 	</test>
-	
+
 	<test>
 		<name>testCorrectNumFrom</name>
 		<price>abc</price>
 		<price>!</price>
 		<price>@</price>
 	</test>
-	
+
 	<test>
 		<name>testCorrectNumTo</name>
 		<price>abc</price>
